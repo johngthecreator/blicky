@@ -1,0 +1,2 @@
+module OppsHelper
+end

@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-4 w-5/6 sm:w-[500px]">
+<h2 class="text-[40px] font-black">Create An Account</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field mb-3">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-full rounded-lg" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password",  class:"w-full rounded-lg"  %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",  class:"w-full rounded-lg"  %>
+  </div>
+
+  <div class="actions bg-black w-1/4 p-2 rounded-lg text-white text-center">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

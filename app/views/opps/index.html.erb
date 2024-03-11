@@ -1,0 +1,30 @@
+<div class="w-full h-full p-5">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center pb-4">
+    <h1 class="font-bold text-4xl">Dashboard</h1>
+    <%= link_to "Add +", new_opp_path, class: "rounded-lg py-3 px-5 bg-black text-white block font-medium" %>
+  </div>
+
+  <div id="opps" class="min-w-full">
+  <table class="w-full">
+      <tr>
+          <th class="font-bold text-left text-xl">
+              Name
+          </th>
+          <th class="font-bold text-left text-xl">
+              Contact Info
+          </th>
+          <th class="font-bold text-left text-xl hidden sm:table-cell">
+              Opping Reason
+          </th>
+          <th class="font-bold text-left text-xl hidden sm:table-cell">
+              Options
+          </th>
+      </tr>
+    <%= render @opps %>
+  </table>
+  </div>
+</div>

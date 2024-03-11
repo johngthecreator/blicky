@@ -1,0 +1,19 @@
+<tr id="<%= dom_id opp %>" class="border-y-2 border-solid border-gray-300 h-[50px]">
+    <td>
+        <%= link_to opp.name, opp, class: "hover:underline" %>
+    </td>
+
+    <td>
+        <%= opp.contact_info %>
+    </td>
+
+    <td class="hidden sm:table-cell">
+        <%= truncate(opp.opp_reason, length: 50) %>
+    </td>
+
+  <% if action_name != "show" %>
+      <td class="hidden sm:table-cell">
+        <%= link_to "Edit", edit_opp_path(opp) %>
+    </td>
+  <% end %>
+</tr>

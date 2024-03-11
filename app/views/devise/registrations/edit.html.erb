@@ -1,0 +1,46 @@
+<div class="flex flex-col gap-4 w-5/6 sm:w-[500px]">
+<h2 class="text-[40px] font-black">Edit Profile</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field mb-3">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-full rounded-lg" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class:"w-full rounded-lg" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"w-full rounded-lg" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class:"w-full rounded-lg" %>
+  </div>
+
+  <div class="actions bg-black p-2 rounded-lg text-white text-center">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<div class="flex flex-row justify-evenly gap-2">
+<div class="inline-block w-full">
+    <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete,  class: "rounded-lg py-3 w-full bg-gray-100 font-medium" %>
+</div>
+
+<%= link_to "Back", :back, class:"rounded-lg py-3 w-full bg-gray-100 inline-block font-medium text-center"%>
+</div>
