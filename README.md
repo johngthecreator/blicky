@@ -1,24 +1,40 @@
-# README
+## 📌 Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blicky is a web-based opp relationship management tool designed to streamline opp tracking and collaboration...
 
-Things you may want to cover:
+But realistically this is a very simple lead management software that small businesses could use to track their customers.
 
-* Ruby version
+## 🚀 Run Locally
 
-* System dependencies
+1.Clone the blicky repository:
 
-* Configuration
+```sh
+git clone https://github.com/johngthecreator/blicky
+```
 
-* Database creation
+2.Install the dependencies and setup db:
 
-* Database initialization
+```sh
+bundle install
+rails db:setup
+rails db:migrate
+```
 
-* How to run the test suite
+3.Start the development mode:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+rails s
+```
 
-* Deployment instructions
+## ☁️ Demo Deploy
 
-* ...
+[Blicky CRM](https://blicky-ezz0.onrender.com/)
+
+## Feature Adds Roadmap
+
+1. Importing client list from CSV
+2. Setup Basic Emailing
+
+## Contribution
+
+Would love any help with this project! Great Rails starter project to contribue to. Will always keep this repo free and open-source :)
